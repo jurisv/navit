@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu
+    working_directory: ~/navit
+    steps:
+    - checkout
+    - run:
+        command : |
+          apt-get update
+          apt-get install gettext
+          apt-get install libsaxonb-java
+          apt-get install lib32stdc++6
+          apt-get install lib32z1
+          apt-get install python-gobject libdbus-glib-1-dev python-dev
+          pip install junit-xml dbus-python
+          ln -s /usr/lib/python2.7/dist-packages/gobject /opt/circleci/python/2.7.11/lib/python2.7/site-packages/
+          ln -s /usr/lib/python2.7/dist-packages/glib /opt/circleci/python/2.7.11/lib/python2.7/site-packages/
+    - run:
+        command : |
+          bash ci/build_linux.sh
