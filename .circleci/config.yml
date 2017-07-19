@@ -14,6 +14,7 @@ jobs:
           apt-get install -y lib32stdc++6
           apt-get install -y lib32z1
           apt-get install -y python-gobject libdbus-glib-1-dev python-dev
+          apt-get install -y python-pip
           pip install junit-xml dbus-python
           ln -s /usr/lib/python2.7/dist-packages/gobject /opt/circleci/python/2.7.11/lib/python2.7/site-packages/
           ln -s /usr/lib/python2.7/dist-packages/glib /opt/circleci/python/2.7.11/lib/python2.7/site-packages/
