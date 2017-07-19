@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get install -y wget
+apt-get install -y wget imagemagick
 
 linux_test () {
 	# create logs dir
