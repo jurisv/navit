@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt-get install -y wget
+
 linux_test () {
 	# create logs dir
 	mkdir $CIRCLE_ARTIFACTS/logs_${1}
